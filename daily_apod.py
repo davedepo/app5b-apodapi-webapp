@@ -10,12 +10,12 @@ url = f"https://api.nasa.gov/planetary/apod?api_key={api_key}"
 # get url data as dictionary
 response1 = requests.get(url)
 content = response1.json()
-# print(content)
+print(content)
 
 # extract required data from dictionary
 image_date = content["date"]
 image_title = content["title"]
-image_explanation = content["explanation"][:-78]
+image_explanation = content["explanation"][:]
 image_url = content["url"]
 image_copyright = content["copyright"]
 
